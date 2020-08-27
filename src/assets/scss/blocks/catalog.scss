@@ -1,0 +1,98 @@
+.catalog {
+  background: url("../img/background.png") $default-color;
+
+  &__title {
+    font-family: "Exo2", "Arial", sans-serif;
+    font-size: rem(36);
+    font-weight: 100;
+    color: $secondFontColor;
+  }
+
+  &__item {
+    &--selected {
+      .catalog__content {
+        border-color: $selected-color;
+      }
+
+      .catalog__size {
+        background-color: $selected-color;
+      }
+    }
+
+    &--disabled {
+      .catalog__content {
+        border-color: $disabled-color;
+      }
+
+      .catalog__caption-main,
+      .catalog__name,
+      .catalog__spec,
+      .catalog__img
+      {
+        opacity: 0.5;
+        color: $disabled-color;
+      }
+
+      .catalog__size {
+        background-color: $disabled-color;
+      }
+
+      .catalog__caption-additional {
+        color: $warning-color;
+      }
+    }
+  }
+
+  &__content {
+    border: 4px solid $border-base;
+    border-radius: 5px;
+
+    background-color: $secondFontColor;
+  }
+
+  &__caption-main {
+    font-size: rem(16);
+  }
+
+  &__name {
+    font-size: rem(48);
+    color: $primaryFontColor;
+  }
+
+  &__taste {
+    font-size: rem(24);
+  }
+
+  &__spec {
+    font-size: rem(14);
+    line-height: rem(16);
+  }
+
+  &__quantity {
+    font-weight: bold;
+  }
+
+  &__size {
+    font-size: rem(42);
+    color: $secondFontColor;
+
+    background-color: $border-base;
+  }
+
+  &__unit {
+    font-size: rem(21);
+    line-height: rem(22);
+  }
+
+  &__caption-additional {
+    color: $secondFontColor;
+    font-size: rem(13);
+    line-height: rem(16);
+  }
+
+  &__buy {
+    color: $border-base;
+
+    border-bottom: 1px dashed $border-base;
+  }
+}

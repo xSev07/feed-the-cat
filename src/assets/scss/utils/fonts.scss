@@ -2,7 +2,15 @@
   https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
   ========================================================================== */
 
-@import "mixins";
+@font-face {
+  font-family: "Exo2";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Exo2"), url('../fonts/exo2/Exo2Thin.eot'); // IE9 Compat Modes
+  src: local("Exo2"), url('../fonts/exo2/Exo2Thin.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+       url('../fonts/exo2/Exo2Thin.woff') format('woff'), // Pretty Modern Browsers
+       url('../fonts/exo2/Exo2Thin.ttf')  format('truetype'); // Safari, Android, iOS
+}
 
 /*
   One of the ways:

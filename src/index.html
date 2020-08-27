@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preload" href="./assets/fonts/exotwo/oswaldmedium.woff2" as="font">
   <title>Деликатесы для котов</title>
 </head>
 <body>
   <div id="root"></div>
   <section class="catalog">
+    <div class="catalog__container container">
     <h2 class="catalog__title">Ты сегодня покормил кота?</h2>
     <ul class="catalog__list">
       <li class="catalog__item">
@@ -18,8 +20,7 @@
           <p class="catalog__caption-main">Сказочное заморское яство</p>
           <h3 class="catalog__name">
             Нямушка
-            <br/>
-            <span class="catalog__taste">с фуа-гра</span>
+            <span class="catalog__taste">с&nbspфуа-гра</span>
           </h3>
           <p class="catalog__spec">
             <span class="catalog__quantity">10</span>
@@ -30,13 +31,15 @@
           <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
           <p class="catalog__size">
             0,5
-            <br/>
             <span class="catalog__unit">кг</span>
           </p>
         </div>
-        <p class="catalog__caption-additional">Чего сидишь? Порадуй котэ, <label class="catalog__buy" for="item-1">купи</label></p>
+        <p class="catalog__caption-additional">
+          Чего сидишь? Порадуй котэ,
+          <label class="catalog__buy" for="item-1">купи</label>
+        </p>
       </li>
-      <li class="catalog__item">
+      <li class="catalog__item catalog__item--selected">
         <label class="visually-hidden">
           <input type="checkbox" id="item-2">
           Выбрать
@@ -45,25 +48,23 @@
           <p class="catalog__caption-main">Котэ не одобряет?</p>
           <h3 class="catalog__name">
             Нямушка
-            <br/>
-            <span class="catalog__taste">с рыбой</span>
+            <span class="catalog__taste">с&nbspрыбой</span>
           </h3>
           <p class="catalog__spec">
             <span class="catalog__quantity">40</span>
             порций
             <br/>
-            <span class="catalog__quantity">2</span>мыши в подарок
+            <span class="catalog__quantity">2</span> мыши в подарок
           </p>
-          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
-          <p class="catalog__size">
+          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с рыбой" width="260" height="275">
+          <p class="catalog__size catalog__size--selected">
             2
-            <br/>
             <span class="catalog__unit">кг</span>
           </p>
         </div>
         <p class="catalog__caption-additional">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
       </li>
-      <li class="catalog__item">
+      <li class="catalog__item catalog__item--disabled">
         <label class="visually-hidden">
           <input type="checkbox" id="item-3">
           Выбрать
@@ -72,25 +73,24 @@
           <p class="catalog__caption-main">Сказочное заморское яство</p>
           <h3 class="catalog__name">
             Нямушка
-            <br/>
-            <span class="catalog__taste">с курой</span>
+            <span class="catalog__taste">с&nbspкурой</span>
           </h3>
           <p class="catalog__spec">
             <span class="catalog__quantity">100</span>
             порций
             <br/>
-            <span class="catalog__quantity">5</span>мышей в подарок
+            <span class="catalog__quantity">5</span> мышей в подарок
           </p>
-          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
+          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с курой" width="260" height="275">
           <p class="catalog__size">
             5
-            <br/>
             <span class="catalog__unit">кг</span>
           </p>
         </div>
         <p class="catalog__caption-additional">Печалька, с курой закончился</p>
       </li>
     </ul>
+    </div>
   </section>
 </body>
 </html>

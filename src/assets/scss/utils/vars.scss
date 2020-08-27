@@ -2,11 +2,14 @@
   ========================================================================== */
 
 // Font
-$mainFont                : "Helvetica-Base", helvetica, arial, sans-serif;
+$mainFont                : "Trebuchet MS", "Arial", sans-serif;
+$mainFontColor           : #666666;
+$secondFontColor         : #ffffff;
+$primaryFontColor        : #000000;
+$disabledFontColor       : #ffff66;
 
 // Size
-$mainFontColor           : #101010;
-$mainFontSize            : 18px;
+$mainFontSize            : 14px;
 $mainFontWeight          : 400;
 $mainLineHeight          : 1.4;
 
@@ -23,13 +26,15 @@ $smPhoneWidth            : 320px;
 */
 
 // Main color
-$default-color           : #ffffff;
+$default-color           : #1b1b1b;
 $primary-color           : #444ce0;
 $success-color           : #26de81;
 $danger-color            : #fc5c65;
-$warning-color           : #fed330;
+$warning-color           : #ffff66;
 $light-color             : #999999;
 $purple-color            : #8854d0;
+$selected-color          : #d91667;
+$disabled-color          : #b3b3b3;
 
 // Neutral Color
 $neutral-primary         : #303133;
@@ -38,7 +43,7 @@ $neutral-secondary       : #909399;
 $neutral-placeholder     : #c0c4cc;
 
 // Border Color
-$border-base             : #dcdfe6;
+$border-base             : #1698d9;
 $border-light            : #e4e7ed;
 $border-lighter          : #ebeef5;
 $border-lightex          : #f2f6fc;
