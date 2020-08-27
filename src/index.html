@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Webpack</title>
+  <meta charset="UTF-8">
+  <title>Деликатесы для котов</title>
 </head>
 <body>
-    <div id="root"></div>
+  <div id="root"></div>
+  <section class="catalog">
+    <h2 class="catalog__title">Ты сегодня покормил кота?</h2>
+    <ul class="catalog__list">
+      <li class="catalog__item">
+        <label class="visually-hidden">
+          <input type="checkbox" id="item-1">
+          Выбрать
+        </label>
+        <div class="catalog__content">
+          <p class="catalog__caption-main">Сказочное заморское яство</p>
+          <h3 class="catalog__name">
+            Нямушка
+            <br/>
+            <span class="catalog__taste">с фуа-гра</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">10</span>
+            порций
+            <br/>
+            мышь в подарок
+          </p>
+          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
+          <p class="catalog__size">
+            0,5
+            <br/>
+            <span class="catalog__unit">кг</span>
+          </p>
+        </div>
+        <p class="catalog__caption-additional">Чего сидишь? Порадуй котэ, <label class="catalog__buy" for="item-1">купи</label></p>
+      </li>
+      <li class="catalog__item">
+        <label class="visually-hidden">
+          <input type="checkbox" id="item-2">
+          Выбрать
+        </label>
+        <div class="catalog__content">
+          <p class="catalog__caption-main">Котэ не одобряет?</p>
+          <h3 class="catalog__name">
+            Нямушка
+            <br/>
+            <span class="catalog__taste">с рыбой</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">40</span>
+            порций
+            <br/>
+            <span class="catalog__quantity">2</span>мыши в подарок
+          </p>
+          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
+          <p class="catalog__size">
+            2
+            <br/>
+            <span class="catalog__unit">кг</span>
+          </p>
+        </div>
+        <p class="catalog__caption-additional">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+      </li>
+      <li class="catalog__item">
+        <label class="visually-hidden">
+          <input type="checkbox" id="item-3">
+          Выбрать
+        </label>
+        <div class="catalog__content">
+          <p class="catalog__caption-main">Сказочное заморское яство</p>
+          <h3 class="catalog__name">
+            Нямушка
+            <br/>
+            <span class="catalog__taste">с курой</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">100</span>
+            порций
+            <br/>
+            <span class="catalog__quantity">5</span>мышей в подарок
+          </p>
+          <img class="catalog__img" src="assets/img/cat_preview.png" alt="Нямушка с фуа-гра" width="260" height="275">
+          <p class="catalog__size">
+            5
+            <br/>
+            <span class="catalog__unit">кг</span>
+          </p>
+        </div>
+        <p class="catalog__caption-additional">Печалька, с курой закончился</p>
+      </li>
+    </ul>
+  </section>
 </body>
 </html>
