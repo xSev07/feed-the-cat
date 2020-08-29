@@ -76,8 +76,7 @@
       .catalog__caption-main,
       .catalog__name-container,
       .catalog__spec,
-      .catalog__picture
-      {
+      .catalog__picture {
         opacity: 0.5;
         color: $disabled-color;
       }
@@ -108,7 +107,7 @@
     background-color: $secondFontColor;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -12px;
       top: 15px;
