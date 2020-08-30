@@ -1,61 +1,118 @@
-import React from "react";
+import React, {createRef} from "react";
+import {calculateBonus, declOfNum} from "../../utils/common/common";
+import {Declination, EventsMouse, Multiplicity} from "../../const";
 
-const declOfNum = (n, text_forms) => {
-  n = Math.abs(n) % 100; const n1 = n % 10;
-  if (n > 10 && n < 20) { return text_forms[2]; }
-  if (n1 > 1 && n1 < 5) { return text_forms[1]; }
-  if (n1 == 1) { return text_forms[0]; }
-  return text_forms[2];
-};
+class Product extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-const Product = (props) => {
-  const {item} = props;
-  const {captionMain, brand, taste, numberOfServings, weight, unit,
-    description} = item;
+    this.state = {
+      selected: false,
+      displayQuestion: false,
+    };
+
+    this._ended = props.product.balance <= 0;
+    this._checkboxRef = createRef();
+
+    this._handlerProductClick = this._handlerProductClick.bind(this);
+    this._calculateAdditionalCaption = this._calculateAdditionalCaption.bind(this);
+    this._changeDisplayingQuestion = this._changeDisplayingQuestion.bind(this);
+  }
   
-  const declServing = declOfNum(numberOfServings, [`порция`, `порции`, `порций`]);
-  const t2 = Math.floor(numberOfServings / 20);
-  const mouseCount = t2 > 1? t2 : 1;
-  const declMouse = declOfNum(mouseCount, [`мышь`, `мыши`, `мышей`]);
+  _handlerProductClick(evt) {
+    evt.preventDefault();
+    this.setState((prevState) => {
+      const selected = !prevState.selected;
+      this._checkboxRef.current.checked = selected;
+      return {selected};
+    });
+  }
   
-  return (
-    <li className="catalog__item">
-      <input className="hidden" type="checkbox" id="item-1"/>
-      <a className="catalog__content" href="#">
-        <p className="catalog__caption-main">{captionMain}</p>
-        <h3 className="catalog__name-container">
-          <span className="catalog__name-brand">{brand}</span>
-          <br/>
-          <span className="catalog__name-taste">{taste}</span>
-        </h3>
-        <p className="catalog__spec">
-          <span className="catalog__quantity">{numberOfServings} </span>
-          {declServing}
-          <br/>
-          {mouseCount > 1 && <span className="catalog__quantity">{mouseCount} </span>}
-          {declMouse} в подарок
-          <br/>
-          {numberOfServings >= 100 && `заказчик доволен`}
+  _changeDisplayingQuestion(evt) {
+    if (!this.state.selected) {
+      return null;
+    }
+    this.setState({displayQuestion: evt.type === EventsMouse.MOUSE_LEAVE});
+  }
+  
+  _calculateAdditionalCaption() {
+    const {taste, description} = this.props.product;
+    if (this._ended) {
+      return `Печалька, ${taste} закончился`;
+    }
+    
+    if (this.state.selected) {
+      return description;
+    }
+    
+    return (
+      <>
+        Чего сидишь? Порадуй котэ,
+        <a className="catalog__buy" href="#" onClick={this._handlerProductClick}> купи</a>
+      </>
+    );
+  }
+  
+  render() {
+    const {id, caption, brand, taste, numberOfServings,
+      weight, unit} = this.props.product;
+    const {selected, displayQuestion} = this.state;
+    const captionMain = displayQuestion ? `Котэ не одобряет?` : caption;
+    
+    const declServing = declOfNum(numberOfServings, Declination.SERVING);
+    const mouseCount = calculateBonus(numberOfServings, Multiplicity.SERVING);
+    const declMouse = declOfNum(mouseCount, Declination.MOUSE);
+    
+    return (
+      <li className={`
+          catalog__item
+          ${this._ended ? ` catalog__item--disabled` : ``}
+          ${selected ? ` catalog__item--selected` : ``}
+        `}
+      >
+        <input ref={this._checkboxRef} id={id} className="hidden" type="checkbox"/>
+        <a
+          className="catalog__content"
+          href="#"
+          onClick={this._handlerProductClick}
+          onMouseLeave={this._changeDisplayingQuestion}
+          onMouseEnter={this._changeDisplayingQuestion}
+        >
+          <p className={`catalog__caption-main ${displayQuestion ? `catalog__caption-main--showed-question` : ``}`}>
+            {captionMain}
+          </p>
+          <h3 className="catalog__name-container">
+            <span className="catalog__name-brand">{brand}</span>
+            <br/>
+            <span className="catalog__name-taste">{taste}</span>
+          </h3>
+          <p className="catalog__spec">
+            <span className="catalog__quantity">{numberOfServings} </span>
+            {declServing}
+            <br/>
+            {mouseCount > 1 && <span className="catalog__quantity">{mouseCount} </span>}
+            {declMouse} в подарок
+            <br/>
+            {numberOfServings >= Multiplicity.SATISFIED_CUSTOMER && `заказчик доволен`}
+          </p>
+          <div className="catalog__picture-container">
+            <picture>
+              <source type="image/webp" srcSet="assets/img/cat_preview.webp"/>
+              <img className="catalog__picture" src="assets/img/cat_preview.png" width="260" height="275"
+                   alt={`${brand} ${taste}`}/>
+            </picture>
+          </div>
+          <div className="catalog__size-container">
+            <p className="catalog__size-value">{weight.toString().replace(`.`, `,`)}</p>
+            <p className="catalog__size-unit">{unit}</p>
+          </div>
+        </a>
+        <p className="catalog__caption-additional">
+          {this._calculateAdditionalCaption()}
         </p>
-        <div className="catalog__picture-container">
-          <picture>
-            <source type="image/webp" srcSet="assets/img/cat_preview.webp"/>
-            <img className="catalog__picture" src="assets/img/cat_preview.png" width="260" height="275"
-                 alt={`${brand} ${taste}`}/>
-          </picture>
-        </div>
-        <div className="catalog__size-container">
-          <p className="catalog__size-value">{weight}</p>
-          <p className="catalog__size-unit">{unit}</p>
-        </div>
-      </a>
-      <p className="catalog__caption-additional">
-        {description}
-        {/*Чего сидишь? Порадуй котэ,*/}
-        {/*<a className="catalog__buy" href="#"> купи</a>*/}
-      </p>
-    </li>
-  );
+      </li>
+    );
+  }
 };
 
 export default Product;

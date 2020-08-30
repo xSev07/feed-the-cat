@@ -1,22 +1,22 @@
 import React from "react";
-import Product from "../product/product.jsx";
 import {catalogItems} from "../../mocks/catalog-items";
+import Product from "../product/product.jsx";
 
 const Catalog = () => {
   return (
     <section className="catalog">
       <div className="catalog__container container">
         <h2 className="catalog__title">Ты сегодня покормил кота?</h2>
-        <ul className="catalog__list">
-          {catalogItems.map((it) => {
-            return (
+        <form>
+          <ul className="catalog__list">
+            {catalogItems.map((it) =>
               <Product
                 key={it.id}
-                item={it}
+                product={it}
               />
-            )
-          })}
-        </ul>
+            )}
+          </ul>
+        </form>
       </div>
     </section>
   );
