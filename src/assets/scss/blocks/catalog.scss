@@ -49,7 +49,8 @@
           border-bottom: 4px solid $selected-color;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           border-color: $selected-hover-color;
 
           .catalog__size-container {
@@ -70,6 +71,15 @@
 
         &::before {
           border-bottom: 4px solid $disabled-color;
+        }
+
+        &:hover,
+        &:focus {
+          border-color: $disabled-color;
+
+          .catalog__size-container {
+            background-color: $disabled-color;
+          }
         }
       }
 
@@ -118,7 +128,8 @@
       transform: rotate(-45deg);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-color: $border-light;
 
       .catalog__size-container {
@@ -208,5 +219,10 @@
     color: $border-base;
 
     border-bottom: 1px dashed $border-base;
+
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+    }
   }
 }
