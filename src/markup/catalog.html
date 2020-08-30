@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preload" href="./assets/fonts/exotwo/oswaldmedium.woff2" as="font">
+  <title>Деликатесы для котов</title>
+</head>
+<body>
+<div id="root"></div>
+<section class="catalog">
+  <div class="catalog__container container">
+    <h2 class="catalog__title">Ты сегодня покормил кота?</h2>
+    <ul class="catalog__list">
+      <li class="catalog__item">
+        <input class="hidden" type="checkbox" id="item-1"/>
+        <a class="catalog__content" href="#">
+          <p class="catalog__caption-main">Сказочное заморское яство</p>
+          <h3 class="catalog__name-container">
+            <span class="catalog__name-brand">Нямушка</span>
+            <br/>
+            <span class="catalog__name-taste">с&nbsp;фуа-гра</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">10 </span>
+            порций
+            <br/>
+            мышь в подарок
+          </p>
+          <div class="catalog__picture-container">
+            <picture>
+              <source type="image/webp" srcset="assets/img/cat_preview.webp">
+              <img class="catalog__picture" src="assets/img/cat_preview.png" width="260" height="275" alt="Нямушка с фуа-гра">
+            </picture>
+          </div>
+          <div class="catalog__size-container">
+            <p class="catalog__size-value">0,5</p>
+            <p class="catalog__size-unit">кг</p>
+          </div>
+        </a>
+        <p class="catalog__caption-additional">
+          Чего сидишь? Порадуй котэ,
+          <a class="catalog__buy" href="#"> купи</a>
+        </p>
+      </li>
+      <li class="catalog__item catalog__item--selected">
+        <input  class="hidden" type="checkbox" id="item-2"/>
+        <a class="catalog__content" href="#">
+          <p class="catalog__caption-main">Котэ не одобряет?</p>
+          <h3 class="catalog__name-container">
+            <span class="catalog__name-brand">Нямушка</span>
+            <br/>
+            <span class="catalog__name-taste">с&nbsp;рыбой</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">40 </span>
+            порций
+            <br/>
+            <span class="catalog__quantity">2</span> мыши в подарок
+          </p>
+          <div class="catalog__picture-container">
+            <picture>
+              <source type="image/webp" srcset="assets/img/cat_preview.webp">
+              <img class="catalog__picture" src="assets/img/cat_preview.png" width="260" height="275" alt="Нямушка с рыбой">
+            </picture>
+          </div>
+          <div class="catalog__size-container">
+            <p class="catalog__size-value">2</p>
+            <p class="catalog__size-unit">кг</p>
+          </div>
+        </a>
+        <p class="catalog__caption-additional">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+      </li>
+      <li class="catalog__item catalog__item--disabled">
+        <input class="hidden" type="checkbox" id="item-3"/>
+        <a class="catalog__content">
+          <p class="catalog__caption-main">Сказочное заморское яство</p>
+          <h3 class="catalog__name-container">
+            <span class="catalog__name-brand">Нямушка</span>
+            <br/>
+            <span class="catalog__name-taste">с&nbsp;курой</span>
+          </h3>
+          <p class="catalog__spec">
+            <span class="catalog__quantity">100 </span>
+            порций
+            <br/>
+            <span class="catalog__quantity">5</span> мышей в подарок
+            <br/>
+            заказчик доволен
+          </p>
+          <div class="catalog__picture-container">
+            <picture>
+              <source type="image/webp" srcset="assets/img/cat_preview.webp">
+              <img class="catalog__picture" src="assets/img/cat_preview.png" width="260" height="275" alt="Нямушка с курой">
+            </picture>
+          </div>
+          <div class="catalog__size-container">
+            <p class="catalog__size-value">5</p>
+            <p class="catalog__size-unit">кг</p>
+          </div>
+        </a>
+        <p class="catalog__caption-additional">Печалька, с курой закончился</p>
+      </li>
+    </ul>
+  </div>
+</section>
+</body>
+</html>
