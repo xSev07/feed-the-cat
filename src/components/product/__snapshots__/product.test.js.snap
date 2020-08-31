@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should Product render correctly Should render active card 1`] = `
+<li
+  className="
+          catalog__item
+          
+           catalog__item--selected
+        "
+>
+  <input
+    checked={true}
+    className="hidden"
+    id="fish_medium"
+    readOnly={true}
+    type="checkbox"
+  />
+  <a
+    className="catalog__content"
+    href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <p
+      className="catalog__caption-main "
+    >
+      Сказочное заморское яство
+    </p>
+    <h3
+      className="catalog__name-container"
+    >
+      <span
+        className="catalog__name-brand"
+      >
+        Нямушка
+      </span>
+      <br />
+      <span
+        className="catalog__name-taste"
+      >
+        c рыбой
+      </span>
+    </h3>
+    <p
+      className="catalog__spec"
+    >
+      <span
+        className="catalog__quantity"
+      >
+        40
+         
+      </span>
+      порций
+      <br />
+      <span
+        className="catalog__quantity"
+      >
+        2
+         
+      </span>
+      мыши
+       в подарок
+      <br />
+    </p>
+    <div
+      className="catalog__picture-container"
+    >
+      <picture>
+        <source
+          srcSet="assets/img/cat_preview.webp"
+          type="image/webp"
+        />
+        <img
+          alt="Нямушка c рыбой"
+          className="catalog__picture"
+          height="275"
+          src="assets/img/cat_preview.png"
+          width="260"
+        />
+      </picture>
+    </div>
+    <div
+      className="catalog__size-container"
+    >
+      <p
+        className="catalog__size-value"
+      >
+        2
+      </p>
+      <p
+        className="catalog__size-unit"
+      >
+        кг
+      </p>
+    </div>
+  </a>
+  <p
+    className="catalog__caption-additional"
+  >
+    Головы щучьи с чесноком да свежайшая сёмгушка.
+  </p>
+</li>
+`;
+
+exports[`Should Product render correctly Should render card with question 1`] = `
+<li
+  className="
+          catalog__item
+          
+           catalog__item--selected
+        "
+>
+  <input
+    checked={true}
+    className="hidden"
+    id="fish_medium"
+    readOnly={true}
+    type="checkbox"
+  />
+  <a
+    className="catalog__content"
+    href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <p
+      className="catalog__caption-main catalog__caption-main--showed-question"
+    >
+      Котэ не одобряет?
+    </p>
+    <h3
+      className="catalog__name-container"
+    >
+      <span
+        className="catalog__name-brand"
+      >
+        Нямушка
+      </span>
+      <br />
+      <span
+        className="catalog__name-taste"
+      >
+        c рыбой
+      </span>
+    </h3>
+    <p
+      className="catalog__spec"
+    >
+      <span
+        className="catalog__quantity"
+      >
+        40
+         
+      </span>
+      порций
+      <br />
+      <span
+        className="catalog__quantity"
+      >
+        2
+         
+      </span>
+      мыши
+       в подарок
+      <br />
+    </p>
+    <div
+      className="catalog__picture-container"
+    >
+      <picture>
+        <source
+          srcSet="assets/img/cat_preview.webp"
+          type="image/webp"
+        />
+        <img
+          alt="Нямушка c рыбой"
+          className="catalog__picture"
+          height="275"
+          src="assets/img/cat_preview.png"
+          width="260"
+        />
+      </picture>
+    </div>
+    <div
+      className="catalog__size-container"
+    >
+      <p
+        className="catalog__size-value"
+      >
+        2
+      </p>
+      <p
+        className="catalog__size-unit"
+      >
+        кг
+      </p>
+    </div>
+  </a>
+  <p
+    className="catalog__caption-additional"
+  >
+    Головы щучьи с чесноком да свежайшая сёмгушка.
+  </p>
+</li>
+`;
+
+exports[`Should Product render correctly Should render default card 1`] = `
+<li
+  className="
+          catalog__item
+          
+          
+        "
+>
+  <input
+    checked={false}
+    className="hidden"
+    id="fg_small"
+    readOnly={true}
+    type="checkbox"
+  />
+  <a
+    className="catalog__content"
+    href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <p
+      className="catalog__caption-main "
+    >
+      Сказочное заморское яство
+    </p>
+    <h3
+      className="catalog__name-container"
+    >
+      <span
+        className="catalog__name-brand"
+      >
+        Нямушка
+      </span>
+      <br />
+      <span
+        className="catalog__name-taste"
+      >
+        c фуа-гра
+      </span>
+    </h3>
+    <p
+      className="catalog__spec"
+    >
+      <span
+        className="catalog__quantity"
+      >
+        10
+         
+      </span>
+      порций
+      <br />
+      мышь
+       в подарок
+      <br />
+    </p>
+    <div
+      className="catalog__picture-container"
+    >
+      <picture>
+        <source
+          srcSet="assets/img/cat_preview.webp"
+          type="image/webp"
+        />
+        <img
+          alt="Нямушка c фуа-гра"
+          className="catalog__picture"
+          height="275"
+          src="assets/img/cat_preview.png"
+          width="260"
+        />
+      </picture>
+    </div>
+    <div
+      className="catalog__size-container"
+    >
+      <p
+        className="catalog__size-value"
+      >
+        0,5
+      </p>
+      <p
+        className="catalog__size-unit"
+      >
+        кг
+      </p>
+    </div>
+  </a>
+  <p
+    className="catalog__caption-additional"
+  >
+    Чего сидишь? Порадуй котэ,
+    <a
+      className="catalog__buy"
+      href="#"
+      onClick={[Function]}
+    >
+       купи
+    </a>
+  </p>
+</li>
+`;
+
+exports[`Should Product render correctly Should render disabled card 1`] = `
+<li
+  className="
+          catalog__item
+           catalog__item--disabled
+          
+        "
+>
+  <input
+    checked={false}
+    className="hidden"
+    id="chicken_large"
+    readOnly={true}
+    type="checkbox"
+  />
+  <a
+    className="catalog__content"
+    href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <p
+      className="catalog__caption-main "
+    >
+      Сказочное заморское яство
+    </p>
+    <h3
+      className="catalog__name-container"
+    >
+      <span
+        className="catalog__name-brand"
+      >
+        Нямушка
+      </span>
+      <br />
+      <span
+        className="catalog__name-taste"
+      >
+        c курой
+      </span>
+    </h3>
+    <p
+      className="catalog__spec"
+    >
+      <span
+        className="catalog__quantity"
+      >
+        100
+         
+      </span>
+      порций
+      <br />
+      <span
+        className="catalog__quantity"
+      >
+        5
+         
+      </span>
+      мышей
+       в подарок
+      <br />
+      заказчик доволен
+    </p>
+    <div
+      className="catalog__picture-container"
+    >
+      <picture>
+        <source
+          srcSet="assets/img/cat_preview.webp"
+          type="image/webp"
+        />
+        <img
+          alt="Нямушка c курой"
+          className="catalog__picture"
+          height="275"
+          src="assets/img/cat_preview.png"
+          width="260"
+        />
+      </picture>
+    </div>
+    <div
+      className="catalog__size-container"
+    >
+      <p
+        className="catalog__size-value"
+      >
+        5
+      </p>
+      <p
+        className="catalog__size-unit"
+      >
+        кг
+      </p>
+    </div>
+  </a>
+  <p
+    className="catalog__caption-additional"
+  >
+    Печалька, c курой закончился
+  </p>
+</li>
+`;

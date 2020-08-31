@@ -128,4 +128,5 @@ Product.propTypes = {
   onMouseLeave: PropTypes.func.isRequired,
 };
 
+export {Product};
 export default withActiveStatus(withMouseLeaveEvent(Product));

@@ -28,6 +28,9 @@ export const declOfNum = (n, textForms) => {
  * @return {number}
  */
 export const calculateBonus = (currentCount, multiplicity = 1, minBonus = 1) => {
+  if (multiplicity === 0) {
+    return minBonus;
+  }
   const ratio = Math.floor(currentCount / multiplicity);
   return ratio > minBonus ? ratio : minBonus;
 };
