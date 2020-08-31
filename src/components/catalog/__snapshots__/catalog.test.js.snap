@@ -17,11 +17,7 @@ exports[`Should Catalog render correctly 1`] = `
         className="catalog__list"
       >
         <li
-          className="
-          catalog__item
-          
-          
-        "
+          className="catalog__item "
         >
           <input
             checked={false}
@@ -118,11 +114,7 @@ exports[`Should Catalog render correctly 1`] = `
           </p>
         </li>
         <li
-          className="
-          catalog__item
-          
-          
-        "
+          className="catalog__item "
         >
           <input
             checked={false}
@@ -225,11 +217,7 @@ exports[`Should Catalog render correctly 1`] = `
           </p>
         </li>
         <li
-          className="
-          catalog__item
-           catalog__item--disabled
-          
-        "
+          className="catalog__item catalog__item--disabled "
         >
           <input
             checked={false}

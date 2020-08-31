@@ -34,3 +34,12 @@ export const calculateBonus = (currentCount, multiplicity = 1, minBonus = 1) => 
   const ratio = Math.floor(currentCount / multiplicity);
   return ratio > minBonus ? ratio : minBonus;
 };
+
+/**
+ * Удаляет лишние лишние пробелы, переводы строки, табуляцию и т.д.
+ * @param {string} str - строка которую нужно преобразовать
+ * @return {string}
+ */
+export const deleteExtraSpaces = (str) => {
+  return str.replace(/\s+/g, ` `);
+};

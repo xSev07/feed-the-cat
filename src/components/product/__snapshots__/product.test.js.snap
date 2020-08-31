@@ -2,11 +2,7 @@
 
 exports[`Should Product render correctly Should render active card 1`] = `
 <li
-  className="
-          catalog__item
-          
-           catalog__item--selected
-        "
+  className="catalog__item catalog__item--selected "
 >
   <input
     checked={true}
@@ -105,11 +101,7 @@ exports[`Should Product render correctly Should render active card 1`] = `
 
 exports[`Should Product render correctly Should render card with question 1`] = `
 <li
-  className="
-          catalog__item
-          
-           catalog__item--selected
-        "
+  className="catalog__item catalog__item--selected "
 >
   <input
     checked={true}
@@ -208,11 +200,7 @@ exports[`Should Product render correctly Should render card with question 1`] = 
 
 exports[`Should Product render correctly Should render default card 1`] = `
 <li
-  className="
-          catalog__item
-          
-          
-        "
+  className="catalog__item "
 >
   <input
     checked={false}
@@ -312,11 +300,7 @@ exports[`Should Product render correctly Should render default card 1`] = `
 
 exports[`Should Product render correctly Should render disabled card 1`] = `
 <li
-  className="
-          catalog__item
-           catalog__item--disabled
-          
-        "
+  className="catalog__item catalog__item--disabled "
 >
   <input
     checked={false}

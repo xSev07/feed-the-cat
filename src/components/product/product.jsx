@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {calculateBonus, declOfNum} from '../../utils/common/common';
+import {calculateBonus, declOfNum, deleteExtraSpaces} from '../../utils/common/common';
 import {Declination, Multiplicity} from '../../const';
 import withActiveStatus from "../../hocs/with-active-status/with-active-status.jsx";
 import withMouseLeaveEvent from "../../hocs/with-mouse-leave-event/with-mouse-leave-event.jsx";
@@ -59,11 +59,10 @@ class Product extends PureComponent {
     const declMouse = declOfNum(mouseCount, Declination.MOUSE);
 
     return (
-      <li className={`
-          catalog__item
-          ${this._ended ? ` catalog__item--disabled` : ``}
-          ${isActive ? ` catalog__item--selected` : ``}
-        `}
+      <li className={deleteExtraSpaces(`catalog__item
+        ${this._ended ? ` catalog__item--disabled` : ``}
+        ${isActive ? ` catalog__item--selected` : ``}
+      `)}
       >
         <input id={id} readOnly className='hidden' type='checkbox' checked={isActive}/>
         <a
@@ -73,7 +72,7 @@ class Product extends PureComponent {
           onMouseLeave={this._changeDisplayingQuestion}
           onMouseEnter={this._changeDisplayingQuestion}
         >
-          <p className={`catalog__caption-main ${isMouseLeave ? `catalog__caption-main--showed-question` : ``}`}>
+          <p className={`catalog__caption-main${isMouseLeave ? ` catalog__caption-main--showed-question` : ``}`}>
             {captionMain}
           </p>
           <h3 className='catalog__name-container'>
