@@ -34,7 +34,7 @@ exports[`Should Catalog render correctly 1`] = `
             onMouseLeave={[Function]}
           >
             <p
-              className="catalog__caption-main "
+              className="catalog__caption-main"
             >
               Сказочное заморское яство
             </p>
@@ -131,7 +131,7 @@ exports[`Should Catalog render correctly 1`] = `
             onMouseLeave={[Function]}
           >
             <p
-              className="catalog__caption-main "
+              className="catalog__caption-main"
             >
               Сказочное заморское яство
             </p>
@@ -234,7 +234,7 @@ exports[`Should Catalog render correctly 1`] = `
             onMouseLeave={[Function]}
           >
             <p
-              className="catalog__caption-main "
+              className="catalog__caption-main"
             >
               Сказочное заморское яство
             </p>

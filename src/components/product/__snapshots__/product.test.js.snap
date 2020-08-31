@@ -19,7 +19,7 @@ exports[`Should Product render correctly Should render active card 1`] = `
     onMouseLeave={[Function]}
   >
     <p
-      className="catalog__caption-main "
+      className="catalog__caption-main"
     >
       Сказочное заморское яство
     </p>
@@ -217,7 +217,7 @@ exports[`Should Product render correctly Should render default card 1`] = `
     onMouseLeave={[Function]}
   >
     <p
-      className="catalog__caption-main "
+      className="catalog__caption-main"
     >
       Сказочное заморское яство
     </p>
@@ -317,7 +317,7 @@ exports[`Should Product render correctly Should render disabled card 1`] = `
     onMouseLeave={[Function]}
   >
     <p
-      className="catalog__caption-main "
+      className="catalog__caption-main"
     >
       Сказочное заморское яство
     </p>
