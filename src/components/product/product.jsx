@@ -1,19 +1,15 @@
-import React, {PureComponent, createRef} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {calculateBonus, declOfNum} from '../../utils/common/common';
-import {Declination, EventsMouse, Multiplicity} from '../../const';
+import {Declination, Multiplicity} from '../../const';
+import withActiveStatus from "../../hocs/with-active-status/with-active-status.jsx";
+import withMouseLeaveEvent from "../../hocs/with-mouse-leave-event/with-mouse-leave-event.jsx";
 
 class Product extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      selected: false,
-      displayQuestion: false,
-    };
-
     this._ended = props.product.balance <= 0;
-    this._checkboxRef = createRef();
 
     this._handlerProductClick = this._handlerProductClick.bind(this);
     this._calculateAdditionalCaption = this._calculateAdditionalCaption.bind(this);
@@ -23,22 +19,15 @@ class Product extends PureComponent {
   _handlerProductClick(evt) {
     evt.preventDefault();
 
-    if (this._ended) {
-      return;
+    if (!this._ended) {
+      this.props.onElementClick();
     }
-
-    this.setState((prevState) => {
-      const selected = !prevState.selected;
-      this._checkboxRef.current.checked = selected;
-      return {selected};
-    });
   }
 
   _changeDisplayingQuestion(evt) {
-    if (!this.state.selected) {
-      return;
+    if (this.props.isActive) {
+      this.props.onMouseLeave(evt);
     }
-    this.setState({displayQuestion: evt.type === EventsMouse.MOUSE_LEAVE});
   }
 
   _calculateAdditionalCaption() {
@@ -47,7 +36,7 @@ class Product extends PureComponent {
       return `Печалька, ${taste} закончился`;
     }
 
-    if (this.state.selected) {
+    if (this.props.isActive) {
       return description;
     }
 
@@ -60,10 +49,10 @@ class Product extends PureComponent {
   }
 
   render() {
+    const {product, isActive, isMouseLeave} = this.props;
     const {id, caption, brand, taste, numberOfServings,
-      weight, unit} = this.props.product;
-    const {selected, displayQuestion} = this.state;
-    const captionMain = displayQuestion ? `Котэ не одобряет?` : caption;
+      weight, unit} = product;
+    const captionMain = isMouseLeave ? `Котэ не одобряет?` : caption;
 
     const declServing = declOfNum(numberOfServings, Declination.SERVING);
     const mouseCount = calculateBonus(numberOfServings, Multiplicity.SERVING);
@@ -73,10 +62,10 @@ class Product extends PureComponent {
       <li className={`
           catalog__item
           ${this._ended ? ` catalog__item--disabled` : ``}
-          ${selected ? ` catalog__item--selected` : ``}
+          ${isActive ? ` catalog__item--selected` : ``}
         `}
       >
-        <input ref={this._checkboxRef} id={id} className='hidden' type='checkbox'/>
+        <input id={id} readOnly className='hidden' type='checkbox' checked={isActive}/>
         <a
           className='catalog__content'
           href='#'
@@ -84,7 +73,7 @@ class Product extends PureComponent {
           onMouseLeave={this._changeDisplayingQuestion}
           onMouseEnter={this._changeDisplayingQuestion}
         >
-          <p className={`catalog__caption-main ${displayQuestion ? `catalog__caption-main--showed-question` : ``}`}>
+          <p className={`catalog__caption-main ${isMouseLeave ? `catalog__caption-main--showed-question` : ``}`}>
             {captionMain}
           </p>
           <h3 className='catalog__name-container'>
@@ -133,6 +122,10 @@ Product.propTypes = {
     description: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
   }),
+  isActive: PropTypes.bool.isRequired,
+  isMouseLeave: PropTypes.bool.isRequired,
+  onElementClick: PropTypes.func.isRequired,
+  onMouseLeave: PropTypes.func.isRequired,
 };
 
-export default Product;
+export default withActiveStatus(withMouseLeaveEvent(Product));
