@@ -49,13 +49,16 @@
           border-bottom: 4px solid $selected-color;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
           border-color: $selected-hover-color;
 
           .catalog__size-container {
             background-color: $selected-hover-color;
           }
+        }
+
+        &:focus {
+          opacity: 0.95;
         }
       }
 
@@ -135,13 +138,16 @@
       }
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       border-color: $border-light;
 
       .catalog__size-container {
         background-color: $border-light;
       }
+    }
+
+    &:focus {
+      opacity: 0.95;
     }
 
     &:visited {
