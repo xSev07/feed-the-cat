@@ -1,6 +1,6 @@
-import './assets/scss/main.scss';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "./assets/scss/main.scss";
+import React from "react";
+import ReactDOM from "react-dom";
 import Catalog from "./components/catalog/catalog.jsx";
 import {catalogItems} from "./mocks/catalog-items";
 

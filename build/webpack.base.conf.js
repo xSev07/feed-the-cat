@@ -1,13 +1,13 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require(`path`);
+const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
+const HtmlWebpackPlugin = require(`html-webpack-plugin`);
+const CopyWebpackPlugin = require(`copy-webpack-plugin`);
+const {CleanWebpackPlugin} = require(`clean-webpack-plugin`);
 
 const PATH = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
-  assets: 'assets/',
+  src: path.join(__dirname, `../src`),
+  dist: path.join(__dirname, `../dist`),
+  assets: `assets/`,
 };
 
 module.exports = {
@@ -20,15 +20,15 @@ module.exports = {
   output: {
     filename: `${PATH.assets}js/[name].[contenthash].js`,
     path: PATH.dist,
-    publicPath: '/',
+    publicPath: `/`,
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          name: 'vendors',
+          name: `vendors`,
           test: /node_modules/,
-          chunks: 'all',
+          chunks: `all`,
           enforce: true,
         }
       }
@@ -45,46 +45,46 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
+        loader: `file-loader`,
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
+        loader: `file-loader`,
         options: {
-          name: '[name].[ext]',
+          name: `[name].[ext]`,
         },
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          `style-loader`,
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: { sourceMap: true },
+            loader: `css-loader`,
+            options: {sourceMap: true},
           },
           {
-            loader: 'postcss-loader',
-            options: { sourceMap: true },
+            loader: `postcss-loader`,
+            options: {sourceMap: true},
           },
           {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
+            loader: `sass-loader`,
+            options: {sourceMap: true},
           },
         ],
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          `style-loader`,
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: { sourceMap: true },
+            loader: `css-loader`,
+            options: {sourceMap: true},
           },
           {
-            loader: 'postcss-loader',
-            options: { sourceMap: true },
+            loader: `postcss-loader`,
+            options: {sourceMap: true},
           },
         ],
       },
@@ -92,7 +92,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~': 'src',
+      '~': `src`,
     }
   },
   plugins: [
@@ -102,13 +102,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: `${PATH.src}/index.html`,
-      filename: './index.html',
+      filename: `./index.html`,
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: `${PATH.src}/${PATH.assets}img`, to: `${PATH.assets}img` },
-        { from: `${PATH.src}/${PATH.assets}fonts`, to: `${PATH.assets}fonts` },
-        { from: `${PATH.src}/static`, to: '' }
+        {from: `${PATH.src}/${PATH.assets}img`, to: `${PATH.assets}img`},
+        {from: `${PATH.src}/${PATH.assets}fonts`, to: `${PATH.assets}fonts`},
+        {from: `${PATH.src}/static`, to: ``}
       ]
     }),
   ],

@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {PureComponent} from "react";
 
 const withActiveStatus = (Component) => {
   class ActiveStatusHoc extends PureComponent {
