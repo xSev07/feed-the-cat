@@ -9,10 +9,10 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test.jest": "jest",
     "test": "npm run stylelint && npm run eslint && npm run test.jest",
-    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
-    "build": "webpack --config build/webpack.build.conf.js",
+    "dev": "webpack-dev-server --config webpack-config/webpack.dev.conf.js",
+    "build": "webpack --config webpack-config/webpack.build.conf.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d webpack-config"
   },
   "browserslist": [
     "> 1%",
