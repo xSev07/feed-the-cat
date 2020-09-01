@@ -20,7 +20,6 @@ module.exports = {
   output: {
     filename: `${PATH.assets}js/[name].[contenthash].js`,
     path: PATH.dist,
-    publicPath: `/`,
   },
   optimization: {
     splitChunks: {
@@ -46,12 +45,15 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: `file-loader`,
+        options: {
+          name: `${PATH.assets}fonts/[name].[ext]`,
+        }
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: `file-loader`,
         options: {
-          name: `[name].[ext]`,
+          name: `${PATH.assets}img/[name].[ext]`,
         },
       },
       {
@@ -61,7 +63,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: `css-loader`,
-            options: {sourceMap: true},
+            options: {sourceMap: true, url: false},
           },
           {
             loader: `postcss-loader`,
@@ -100,16 +102,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `${PATH.assets}css/[name].[contenthash].css`,
     }),
-    new HtmlWebpackPlugin({
-      template: `${PATH.src}/index.html`,
-      filename: `./index.html`,
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {from: `${PATH.src}/${PATH.assets}img`, to: `${PATH.assets}img`},
         {from: `${PATH.src}/${PATH.assets}fonts`, to: `${PATH.assets}fonts`},
         {from: `${PATH.src}/static`, to: ``}
       ]
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PATH.src}/index.html`,
+      filename: `./index.html`,
     }),
   ],
 };
