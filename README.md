@@ -4,6 +4,12 @@
 
 Опубликованная сборка: https://xsev07.github.io/feed-the-cat/
 
+Полный стек используемых технологий:
+- React
+- Prop Types
+- Enzyme
+- Jest
+
 Запуск сборки локально:
 1. установить node.js (https://nodejs.org/en/)
 2. скопировать проект в папку
